@@ -12,10 +12,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/home', function () {
+Route::get('/comics', function () {
 
     $comics = config("comics");
 
-    return view('pages.home' , compact("comics"));
+    return view('pages.comics' , compact("comics"));
 
-})->name('homepage');
+})->name('comics');
+
+
+Route::get('/manga', function () {
+
+    $manga = config("mangas.manga");
+
+    return view('pages.manga' , compact("manga"));
+
+})->name('manga');

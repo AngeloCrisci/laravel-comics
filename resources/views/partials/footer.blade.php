@@ -6,7 +6,7 @@
         <div class="card-body">
           <h5 class="card-title">Comics By Angelo</h5>
           <p class="card-text">Spero possa essere di gradimento questa mia pagina</p>
-          <a href="{{route('homepage')}}" class="btn btn-primary">Ricarica</a>
+          <a href="{{route('comics')}}" class="btn btn-primary">Ricarica</a>
         </div>
         <div class="card-footer text-body-secondary">
           love for you
