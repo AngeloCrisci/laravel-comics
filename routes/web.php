@@ -29,13 +29,28 @@ Route::get('/manga', function () {
 
 })->name('manga');
 
-Route::get('/comics/{index}' ,function (){
-        return view('comics.comics_show');
+Route::get('/comics/{index}' ,function (string $index){
+
+            $comics = config("comics");
+            if(isset($comics[$index])){
+            $comic = $comics[$index];
+            return view('comics.comics_show' , compact("comic"));
+        } else {
+            abort(404);
+        }
 })->name('comics_show');
 
 
 
-Route::get('/manga/{index}' ,function (){
-    return view('comics.manga_show');
+Route::get('/manga/{index}' ,function (string $index){
+
+    $manga = config("mangas.manga");
+    if(isset($manga[$index])){
+    $item = $manga[$index];
+    return view('comics.manga_show' , compact("item"));
+} else {
+    abort(404);
+}
 })->name('manga_show');
+
 
