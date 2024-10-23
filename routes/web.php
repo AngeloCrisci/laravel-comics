@@ -28,3 +28,14 @@ Route::get('/manga', function () {
     return view('pages.manga' , compact("manga"));
 
 })->name('manga');
+
+Route::get('/comics/{index}' ,function (){
+        return view('comics.comics_show');
+})->name('comics_show');
+
+
+
+Route::get('/manga/{index}' ,function (){
+    return view('comics.manga_show');
+})->name('manga_show');
+
